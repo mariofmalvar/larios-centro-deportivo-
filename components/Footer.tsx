@@ -1,7 +1,12 @@
 import React from 'react';
 import { Instagram, Facebook, Twitter, MapPin, Phone, Mail, Dumbbell } from 'lucide-react';
+import { View } from '../App';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  setView: (view: View) => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ setView }) => {
   return (
     <footer id="footer" className="bg-slate-900 text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,10 +31,10 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-white">Enlaces Rápidos</h4>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li><a href="#home" className="hover:text-brand-200 transition-colors">Inicio</a></li>
-              <li><a href="#classes" className="hover:text-brand-200 transition-colors">Clases</a></li>
-              <li><a href="#ai-coach" className="hover:text-brand-200 transition-colors">Entrenador IA</a></li>
-              <li><a href="#pricing" className="hover:text-brand-200 transition-colors">Precios</a></li>
+              <li><button onClick={() => setView('home')} className="hover:text-brand-200 transition-colors text-left">Inicio</button></li>
+              <li><button onClick={() => setView('classes')} className="hover:text-brand-200 transition-colors text-left">Clases</button></li>
+              <li><button onClick={() => setView('ai-coach')} className="hover:text-brand-200 transition-colors text-left">Entrenador IA</button></li>
+              <li><button onClick={() => setView('pricing')} className="hover:text-brand-200 transition-colors text-left">Precios</button></li>
             </ul>
           </div>
 

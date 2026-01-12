@@ -1,6 +1,10 @@
 import React from 'react';
 import { Check } from 'lucide-react';
 
+interface PricingProps {
+  onSelectPlan: (planName: string) => void;
+}
+
 const tiers = [
   {
     name: 'Básico',
@@ -25,7 +29,7 @@ const tiers = [
   },
 ];
 
-const Pricing: React.FC = () => {
+const Pricing: React.FC<PricingProps> = ({ onSelectPlan }) => {
   return (
     <section id="pricing" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,16 +69,16 @@ const Pricing: React.FC = () => {
                 ))}
               </ul>
 
-              <a
-                href="#join"
+              <button
+                onClick={() => onSelectPlan(tier.name)}
                 className={`mt-8 block w-full py-3 px-6 border border-transparent rounded-xl text-center font-medium ${
                   tier.popular
                     ? 'bg-brand-600 text-white hover:bg-brand-700 shadow-lg shadow-brand-100'
                     : 'bg-brand-50 text-brand-700 hover:bg-brand-100'
-                } transition-all`}
+                } transition-all active:scale-95`}
               >
                 {tier.cta}
-              </a>
+              </button>
             </div>
           ))}
         </div>

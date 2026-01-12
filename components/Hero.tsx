@@ -1,7 +1,12 @@
 import React from 'react';
 import { ArrowRight, PlayCircle } from 'lucide-react';
+import { View } from '../App';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  setView: (view: View) => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ setView }) => {
   return (
     <div id="home" className="relative pt-20 pb-16 md:pt-32 md:pb-24 flex items-center min-h-[90vh] overflow-hidden">
       {/* Background Image with Overlay */}
@@ -31,14 +36,20 @@ const Hero: React.FC = () => {
             </p>
             <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
               <div className="space-y-4 sm:space-y-0 sm:flex sm:gap-4">
-                <a href="#ai-coach" className="flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-brand-600 hover:bg-brand-700 md:py-4 md:text-lg md:px-10 shadow-lg shadow-brand-100 transition-all hover:scale-105">
+                <button 
+                  onClick={() => setView('ai-coach')} 
+                  className="flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-brand-600 hover:bg-brand-700 md:py-4 md:text-lg md:px-10 shadow-lg shadow-brand-100 transition-all hover:scale-105"
+                >
                   Probar Entrenador IA
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
-                <a href="#classes" className="flex items-center justify-center px-8 py-3 border border-slate-200 text-base font-medium rounded-full text-brand-700 bg-white hover:bg-slate-50 md:py-4 md:text-lg md:px-10 transition-all">
+                </button>
+                <button 
+                  onClick={() => setView('classes')} 
+                  className="flex items-center justify-center px-8 py-3 border border-slate-200 text-base font-medium rounded-full text-brand-700 bg-white hover:bg-slate-50 md:py-4 md:text-lg md:px-10 transition-all"
+                >
                   Ver Clases
                   <PlayCircle className="ml-2 h-5 w-5" />
-                </a>
+                </button>
               </div>
             </div>
           </div>
