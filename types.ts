@@ -34,8 +34,8 @@ export interface WorkoutPlanResponse {
 export interface ClassSession {
   id: string;
   title: string;
-  time: string;
   instructor: string;
   intensity: 'Baja' | 'Media' | 'Alta';
   image: string;
+  schedule: string[];
 }

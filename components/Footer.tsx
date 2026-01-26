@@ -34,6 +34,7 @@ const Footer: React.FC<FooterProps> = ({ setView }) => {
               <li><button onClick={() => setView('home')} className="hover:text-brand-200 transition-colors text-left">Inicio</button></li>
               <li><button onClick={() => setView('classes')} className="hover:text-brand-200 transition-colors text-left">Clases</button></li>
               <li><button onClick={() => setView('ai-coach')} className="hover:text-brand-200 transition-colors text-left">Entrenador IA</button></li>
+              <li><button onClick={() => setView('team')} className="hover:text-brand-200 transition-colors text-left">Equipo</button></li>
               <li><button onClick={() => setView('pricing')} className="hover:text-brand-200 transition-colors text-left">Precios</button></li>
             </ul>
           </div>

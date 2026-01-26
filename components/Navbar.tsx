@@ -14,6 +14,7 @@ const Navbar: React.FC<NavbarProps> = ({ setView, currentView }) => {
     { name: 'Inicio', view: 'home' },
     { name: 'Clases', view: 'classes' },
     { name: 'Entrenador IA', view: 'ai-coach' },
+    { name: 'Equipo', view: 'team' },
     { name: 'Precios', view: 'pricing' },
   ];
 

@@ -5,11 +5,12 @@ import HomeHighlights from './components/HomeHighlights';
 import Classes from './components/Classes';
 import AICoach from './components/AICoach';
 import Pricing from './components/Pricing';
+import Team from './components/Team';
 import Footer from './components/Footer';
 import Checkout from './components/Checkout';
 import { ArrowLeft } from 'lucide-react';
 
-export type View = 'home' | 'classes' | 'ai-coach' | 'pricing' | 'checkout';
+export type View = 'home' | 'classes' | 'ai-coach' | 'pricing' | 'team' | 'checkout';
 
 function App() {
   const [history, setHistory] = useState<View[]>(['home']);
@@ -75,6 +76,16 @@ function App() {
               <p className="mt-2 text-brand-100 opacity-80 uppercase tracking-widest text-sm">Elige el plan que mejor se adapte a ti</p>
             </div>
             <Pricing onSelectPlan={handleJoinPlan} />
+          </div>
+        );
+      case 'team':
+        return (
+          <div className="pt-20">
+            <div className="bg-brand-600 py-16 text-white text-center">
+              <h1 className="text-4xl font-bold">Nuestro Equipo</h1>
+              <p className="mt-2 text-brand-100 opacity-80 uppercase tracking-widest text-sm">Profesionales de élite a tu servicio</p>
+            </div>
+            <Team />
           </div>
         );
       case 'checkout':
